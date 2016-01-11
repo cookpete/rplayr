@@ -1,0 +1,71 @@
+{
+  "name": "react-transform-boilerplate",
+  "version": "1.0.0",
+  "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build": "npm run clean && npm run build:webpack && cp index.html dist",
+    "start": "node server.js",
+    "lint:js": "standard --verbose | snazzy",
+    "lint:css": "scss-lint src",
+    "lint": "npm run lint:js; npm run lint:css",
+    "test": "NODE_ENV=production mocha --require ignore-styles test --compilers js:babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaearon/react-transform-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack",
+    "babel",
+    "react-transform"
+  ],
+  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/gaearon/react-transform-boilerplate/issues"
+  },
+  "homepage": "https://github.com/gaearon/react-transform-boilerplate",
+  "devDependencies": {
+    "babel-core": "^6.3.17",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.0.1",
+    "babel-preset-stage-0": "^6.3.13",
+    "chai": "^3.4.1",
+    "css-loader": "^0.23.0",
+    "express": "^4.13.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "ignore-styles": "^1.1.0",
+    "mocha": "^2.3.4",
+    "node-sass": "^3.4.2",
+    "react-addons-test-utils": "^0.14.3",
+    "rimraf": "^2.4.4",
+    "sass-loader": "^3.1.2",
+    "snazzy": "^2.0.1",
+    "standard": "^5.4.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.6.0"
+  },
+  "dependencies": {
+    "normalize.css": "^3.0.3",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}

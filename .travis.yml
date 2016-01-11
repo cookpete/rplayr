@@ -1,0 +1,15 @@
+language: node_js
+install:
+  - gem install scss-lint
+  - npm install -g npm@2
+  - npm install
+node_js:
+  - "4.1"
+  - "4.0"
+  - "0.12"
+  - "0.11"
+  - "0.10"
+  - "iojs"
+script:
+  - npm run lint
+  - npm run test
