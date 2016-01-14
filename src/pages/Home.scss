@@ -1,0 +1,56 @@
+@import '../variables';
+@import '../mixins';
+
+.columns {
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.genres {
+  composes: columns;
+
+  @include desktop {
+    li {
+      width: calc((100% - #{$spacing}) / 2);
+
+      &:nth-child(odd) {
+        margin-right: $spacing;
+      }
+    }
+  }
+}
+
+.subreddits {
+  composes: columns;
+
+  @include desktop {
+    li {
+      width: calc((100% - #{$spacing * 2}) / 3);
+
+      &:not(:nth-child(3n)) {
+        margin-right: $spacing;
+      }
+    }
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing;
+  padding: 4px;
+  fill: lighten($black, 75%);
+  background: lighten($black, 97%);
+  border-radius: 2em;
+}
+
+.searchIcon {
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+.clearSearch {
+  padding: 0;
+}

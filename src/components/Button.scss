@@ -1,0 +1,17 @@
+@import '../variables';
+
+.button {
+  display: block;
+  width: 7em;
+  margin: auto;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: lighten($black, 50);
+  background-color: $button-color;
+  border-radius: 2px;
+
+  &:active { background-color: darken($button-color, 12); }
+  &:hover {  background-color: darken($button-color, 4); }
+  &:focus {  background-color: darken($button-color, 8); }
+}

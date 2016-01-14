@@ -1,0 +1,53 @@
+@import '../variables';
+@import '../mixins';
+
+.playerWrapper {
+  position: relative;
+  margin-bottom: $spacing;
+  padding-top: 100% / $player-ratio;
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgba($player-background-color, .3),
+    $player-background-color
+  );
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing;
+}
+
+.timeSlider {
+  flex: 1 1;
+}
+
+.volumeIcon {
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.volumeSlider {
+  flex: 0 0 15%;
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.duration {
+  margin: 0 4px;
+  font-size: 12px;
+}

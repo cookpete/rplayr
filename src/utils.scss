@@ -1,0 +1,11 @@
+.truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin desktop {
+  @media (min-width: 420px) {
+    @content;
+  }
+}

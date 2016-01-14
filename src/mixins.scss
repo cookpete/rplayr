@@ -1,0 +1,7 @@
+@import './variables';
+
+@mixin desktop {
+  @media (min-width: $break-desktop) {
+    @content;
+  }
+}

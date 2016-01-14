@@ -1,0 +1,76 @@
+@import './variables';
+
+:global {
+  * {
+    box-sizing: border-box;
+  }
+
+  strong,
+  h1,
+  h2 {
+    font-weight: 500;
+  }
+
+  h1,
+  h2 {
+    margin-bottom: $spacing;
+    text-transform: lowercase;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  ul {
+    margin: 0;
+    margin-bottom: $spacing;
+    padding: 0;
+    list-style: none;
+  }
+
+  button {
+    margin-right: 4px;
+    padding: 4px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+
+    &:focus { fill: lighten($black, 30%); }
+    &:hover { fill: lighten($black, 40%); }
+    &:active { fill: lighten($black, 50%); }
+  }
+
+  a {
+    color: $link-color;
+
+    &:visted { color: darken($link-color, 5); }
+    &:hover {  color: darken($link-color, 10); }
+    &:active { color: darken($link-color, 15); }
+  }
+
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  dt {
+    font-weight: 500;
+    text-transform: lowercase;
+  }
+
+  dd {
+    margin-bottom: 1em;
+  }
+
+  [type=text] {
+    width: 100%;
+    padding: 4px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+  }
+}

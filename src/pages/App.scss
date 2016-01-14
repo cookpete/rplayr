@@ -1,0 +1,31 @@
+@import '../variables';
+
+.app {
+  max-width: 40em;
+  line-height: 1.4;
+  margin: auto;
+  padding: $spacing * 2;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: 300;
+}
+
+.header {
+  margin-bottom: $spacing;
+  text-transform: lowercase;
+
+  a {
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+.title {
+  display: inline-block;
+  margin: 0;
+  font-size: $font-size;
+
+  a {
+    color: $black;
+  }
+}

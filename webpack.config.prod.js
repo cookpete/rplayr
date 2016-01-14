@@ -30,13 +30,20 @@ module.exports = {
       loader: 'babel',
       include: path.join(__dirname, 'src')
     }, {
+      test: /\.json$/,
+      loader: 'json',
+      include: path.join(__dirname, 'data')
+    }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&sourceMap!sass?sourceMap'),
+      loader: ExtractTextPlugin.extract('style', 'css?modules&sourceMap&localIdentName=[hash:base64:3]!sass?sourceMap'),
       include: path.join(__dirname, 'src')
     }, {
-      test: /normalize.css$/,
+      test: /\.css$/,
       loader: ExtractTextPlugin.extract('style', 'css'),
-      include: path.join(__dirname, 'node_modules', 'normalize.css')
+      include: [
+        path.join(__dirname, 'src'),
+        path.join(__dirname, 'node_modules', 'normalize.css')
+      ]
     }]
   }
 }

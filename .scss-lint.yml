@@ -1,6 +1,33 @@
 linters:
   PropertySortOrder:
-    order: smacss
+    order:
+      - composes
+      - appearance
+      - flex
+      - display
+      - align-items
+      - position
+      - top
+      - right
+      - bottom
+      - left
+      - width
+      - max-width
+      - height
+      - max-height
+      - line-height
+      - margin
+      - margin-top
+      - margin-right
+      - margin-bottom
+      - margin-left
+      - padding
+      - padding-top
+      - padding-right
+      - padding-bottom
+      - padding-left
   PropertySpelling:
     extra_properties:
       - composes
+  SelectorFormat:
+    convention: camel_case

@@ -1,15 +1,18 @@
 language: node_js
-install:
-  - gem install scss-lint
-  - npm install -g npm@2
-  - npm install
+addons:
+  apt:
+    packages:
+    - sshpass
 node_js:
-  - "4.1"
-  - "4.0"
-  - "0.12"
-  - "0.11"
-  - "0.10"
-  - "iojs"
+  - "5"
+  - "4"
 script:
   - npm run lint
-  - npm run test
+  # - npm run test
+  - npm run build
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && sshpass -e scp -r -o stricthostkeychecking=no dist/* $DEPLOY_DEST/reddit-player
+env:
+  global:
+  - secure: UbOu92Wa/Kth3tFj5YbtzN+LG3M23EohX8knqQoZNNXESNWJik5Ru8XOxt9/VdGJHTM3cOTnYPE6gKfC3JnjsgAYWPJXVKsbM0gjlg6zwIpq54qmcXSGvBNzzyxYVGl1mocmlyOHI9jJwFao95nc5v++zjRHfkpLb5uN7clZxbJPxW3iLzqODIGezpq4aC5cMOpphoEUduDmJU4XeI9IeIyXIY3URdZ8JSoOtR1Rbfhcr0ZCliUyneiWXu6mB/gH4DQDLp0H60PV8E6JNt7xmnRqGLBSv3nYe51KFBh11TMVsebonpD+aAQcbCE/HBAVPKHH6Eg96O04S4a0ouaA6n3LJLTyLP0bHplaaLIVjqOWNurCEISGWuKTcdVO7eAO8lqSpTcGM38z7IflxzfaE9lg97TdIjKZHZszolIxD7grFZQCcCrJAd7cYqenyNtsnnlEV4lcb83WFLQE/DI4/z8v9fMR7vnaDI10h+qdF55e8Sp966rlZI7NY1g1OzAgKebsiH//2oL3AJ5ZFIwIggHo7Bg/axG2FJiRlTfhYW4AdbRw5NsQ+AgEDxXWJsoHyKAdkdqZNGkiUKTTBnBzW22H4npaoIgAFDl1TyVoWG5WPUuO2p+WQIvfc81ABEutLcSHBQSGrO9NdeaphlfhLFEXAa//bS4AzfgOpiUmrtA=
+  - secure: rLF8KNqN02zbuZrcEsTH+wj8WFaFEEAvzHba7qbgnvVlsy0kJyxcq69Y+/jSMexqxDFlLsUxRQTqzvMu6J5AFibwFo0e8lMO4jQCf/zKC/veKG3NJbf3qLTzMaSXFVYs3luwAz9aEiqIKZvxD85GBcJ1IQsk3pT6GsQj60NcHDcq0uQcRBwR5W2KWOC+9PTsSvlMouGHtApaPKQRMS2xUlXYqnWm3CDajRZYPFuft5rbt9cuUmxNu/LzCzJrCYPxxQKdf/6TZ7/+gR/q1XolzkuO75vw5MQofCFwbr0qzEPjfuv0WeUETdq7OaHrU8H6QMON2hCf1jlnaXc7dZzWwRB9ph/lXpDekWVim+P11ZH+SbG2iaycKKJIyMzlb5sBxz2EmwDgeI8YbgJ6XwAf+OXObrgdaCKfXcQjOkI0LRDD+uViJePTsNY0DQOXlQS1lMj7PSFSAdnmdjh3A74cVg0qZxaiIUsY2Ygntxr/DULXG9guGJS99lgqr6AdjdQ7GT5BpZiMzMNbU+NqwCEJznwS88pg2OD0eMGMCnG9SYKbGzCUWuAG57InB38WyyJDg6p1VyaHK0I1FkvI2xyjN74CGDjAFRVsY2BQIc2DI/w3KYZ4ShGWW79pkNhgoWYRY+fwlY2zNyU9g44aQ1O/bHqUUnPC+MC7kUDJ5I9FDMA=

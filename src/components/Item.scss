@@ -1,0 +1,62 @@
+@import '../variables';
+
+$height: 2.5rem;
+$active-background: rgba($link-color, .1);
+$thumb-background: rgba(#000, .1);
+$thumb-text-color: rgba(#fff, .5);
+$meta-color: #888;
+$title-font-size: 15px;
+
+.item {
+  display: flex;
+  padding: 4px;
+
+  > a {
+    display: inherit;
+    width: 100%;
+    text-decoration: none;
+  }
+}
+
+.activeItem {
+  composes: item;
+  background: $active-background;
+  border-radius: 2px;
+}
+
+.thumbnail {
+  flex: 0 0 $height;
+  height: $height;
+  line-height: $height;
+  margin-right: $spacing;
+  border-radius: 50%;
+  background-color: $thumb-background;
+  background-position: center;
+  background-size: auto 135%; // Zoom a bit to crop out letterboxing
+  color: $thumb-text-color;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.meta {
+  font-size: 12px;
+  color: $meta-color;
+  text-decoration: none;
+}
+
+.title {
+  composes: truncate from '../utils.scss';
+  font-size: $title-font-size;
+}
+
+.noTitle {
+  composes: title;
+  color: $meta-color;
+}
