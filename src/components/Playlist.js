@@ -7,6 +7,7 @@ import classNames from './Playlist.scss'
 import Player from './Player'
 import Button from './Button'
 import Post, { DEFAULT_TITLE } from './Post'
+import { trackPlaylistEvent } from '../analytics'
 
 const IGNORE_AUTHORS = ['Mentioned_Videos', 'PlaylisterBot']
 
@@ -44,6 +45,7 @@ export default class Playlist extends Component {
       loadMore: () => {
         loadMore().then(::this.processPosts)
         this.setState({ loadMore: null })
+        trackPlaylistEvent('more', posts.length)
       }
     })
   };
@@ -60,6 +62,7 @@ export default class Playlist extends Component {
     this.setState({
       activePost: post
     })
+    trackPlaylistEvent('load', post.url)
   };
   skip = (delta = +1) => {
     const posts = this.getPosts()

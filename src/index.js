@@ -2,9 +2,13 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-router'
 
+import { trackPageView } from './analytics'
 import App from './pages/App'
 import Home from './pages/Home'
 import Playlist from './components/Playlist'
+
+// Hook up analytics
+browserHistory.listen(trackPageView)
 
 render((
   <Router history={browserHistory}>

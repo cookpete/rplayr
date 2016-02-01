@@ -5,6 +5,7 @@ import classNames from './Player.scss'
 import Range from './Range'
 import Icon from './Icon'
 import Duration from './Duration'
+import { trackPlayerEvent } from '../analytics'
 
 export default class Player extends Component {
   static propTypes = {
@@ -32,15 +33,25 @@ export default class Player extends Component {
   onPlayerProgress = state => this.setState(this.state.seeking ? {} : state);
   onPlayerDuration = duration => this.setState({ duration });
   onPlayerEnded = () => this.props.onSkip();
-  onTogglePlaying = () => this.setState({ playing: !this.state.playing });
-  onClickNext = () => this.props.onSkip();
-  onClickPrev = () => this.props.onSkip(-1);
+  onTogglePlaying = () => {
+    this.setState({ playing: !this.state.playing })
+    trackPlayerEvent(this.state.playing ? 'pause' : 'play')
+  };
+  onClickNext = () => {
+    this.props.onSkip()
+    trackPlayerEvent('next')
+  };
+  onClickPrev = () => {
+    this.props.onSkip(-1)
+    trackPlayerEvent('prev')
+  };
   onSetVolume = volume => this.setState({ volume });
   onSeekStart = () => this.setState({ seeking: true });
   onSeekChange = fraction => this.setState({ played: fraction });
   onSeekEnd = fraction => {
     this.setState({ seeking: false })
     this.refs.player.seekTo(fraction)
+    trackPlayerEvent('seek', Math.round(fraction * 100))
   };
   render () {
     const { activePost } = this.props
