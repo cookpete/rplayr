@@ -6,10 +6,9 @@ import { Link } from 'react-router'
 import classNames from './Playlist.scss'
 import Player from './Player'
 import Button from './Button'
-import Post, { DEFAULT_TITLE } from './Post'
+import Post from './Post'
 import { trackPlaylistEvent } from '../analytics'
-
-const IGNORE_AUTHORS = ['Mentioned_Videos', 'PlaylisterBot']
+import { APP_NAME, IGNORE_AUTHORS, DEFAULT_POST_TITLE, SEPARATOR } from '../config'
 
 export default class Playlist extends Component {
   static propTypes = {
@@ -58,7 +57,7 @@ export default class Playlist extends Component {
     return posts[pathname + search]
   }
   playPost = post => {
-    document.title = (post.title || DEFAULT_TITLE) + ' · redditplayer'
+    document.title = `${post.title || DEFAULT_POST_TITLE}${SEPARATOR}${APP_NAME}`
     this.setState({
       activePost: post
     })
@@ -104,7 +103,7 @@ export default class Playlist extends Component {
       return (
         <ul className={classNames.sort}>
           <li><a href={'https://www.reddit.com' + pathname + search} target='_blank'>playlist source</a></li>
-          <li>·</li>
+          <li>{SEPARATOR}</li>
           <li><Link to={path}>hot</Link></li>
           <li><Link to={path + '/new'}>new</Link></li>
           <li>top</li>

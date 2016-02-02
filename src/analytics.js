@@ -1,3 +1,5 @@
+import { TRACKING_ID } from './config'
+
 if (typeof window !== 'undefined') {
   /* eslint-disable */
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -6,9 +8,7 @@ if (typeof window !== 'undefined') {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   /* eslint-enable */
 
-  const UA_CODE = 'UA-25230536-8'
-
-  window.ga('create', UA_CODE, 'auto')
+  window.ga('create', TRACKING_ID, 'auto')
 
   // Track errors
   window.onerror = function (err, url, line) {

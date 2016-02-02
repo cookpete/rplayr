@@ -5,10 +5,7 @@ import 'normalize.css/normalize.css'
 import '../styles/defaults.scss'
 import classNames from './App.scss'
 import { trackTiming } from '../analytics'
-
-const AUTHOR_URL = 'https://github.com/CookPete'
-const SOURCE_URL = 'https://github.com/CookPete/reddit-player'
-const DOT = ' · '
+import { APP_NAME, AUTHOR_URL, SOURCE_URL, SEPARATOR } from '../config'
 
 export default class App extends Component {
   static propTypes = {
@@ -25,11 +22,13 @@ export default class App extends Component {
         <header className={classNames.header}>
           <h1 className={classNames.title}>
             <Link to='/'>
-              RedditPlayer
+              {APP_NAME}
             </Link>
           </h1>
-          {DOT}<a href={SOURCE_URL} target='_blank'>Source</a>
-          {DOT} by <a href={AUTHOR_URL} target='_blank'>CookPete</a>
+          {SEPARATOR}
+          <a href={SOURCE_URL} target='_blank'>Source</a>
+          {SEPARATOR}
+          by <a href={AUTHOR_URL} target='_blank'>CookPete</a>
         </header>
         { this.props.children }
       </div>

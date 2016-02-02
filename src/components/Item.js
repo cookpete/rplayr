@@ -3,8 +3,7 @@ import { Link } from 'react-router'
 import randomcolor from 'randomcolor'
 
 import classNames from './Item.scss'
-
-export const DEFAULT_TITLE = 'Untitled'
+import { DEFAULT_POST_TITLE } from '../config'
 
 export default function Item ({ onClick, href, thumbnail, title, meta, active }) {
   const itemClass = active ? classNames.activeItem : classNames.item
@@ -34,7 +33,7 @@ function renderContent ({ thumbnail, title, meta }) {
     backgroundImage: thumbnail ? `url(${thumbnail})` : undefined,
     backgroundColor: randomcolor({ seed: title, luminosity: 'light' })
   }
-  title = title || DEFAULT_TITLE
+  title = title || DEFAULT_POST_TITLE
   return [
     <div key='thumb' className={classNames.thumbnail} style={thumbStyle}>
       { !thumbnail ? title.slice(0, 1).toLowerCase() : '' }

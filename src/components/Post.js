@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 
 import Item from './Item'
 import { pluralize, isNumber, decode } from '../utils'
+import { SEPARATOR } from '../config'
 
 export default class Post extends Component {
   static propTypes = {
@@ -49,9 +50,9 @@ export default class Post extends Component {
     )
   }
   renderMeta (post) {
-    let nodes = [ this.renderTime(post), ' · ', this.renderComments(post) ]
+    let nodes = [ this.renderTime(post), SEPARATOR, this.renderComments(post) ]
     if (this.props.showSubreddit) {
-      nodes = nodes.concat(' · ', this.renderSubreddit(post))
+      nodes = nodes.concat(SEPARATOR, this.renderSubreddit(post))
     }
     return nodes
   }
