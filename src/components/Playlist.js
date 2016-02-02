@@ -99,9 +99,12 @@ export default class Playlist extends Component {
   renderSortLinks () {
     const { subreddit, multi, username, post_id } = this.props.params
     if (subreddit && !post_id || multi) {
+      const { pathname, search } = this.props.location
       const path = subreddit ? `/r/${subreddit}` : `/user/${username}/m/${multi}`
       return (
         <ul className={classNames.sort}>
+          <li><a href={'https://www.reddit.com' + pathname + search} target='_blank'>playlist source</a></li>
+          <li>·</li>
           <li><Link to={path}>hot</Link></li>
           <li><Link to={path + '/new'}>new</Link></li>
           <li>top</li>

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import TimeAgo from 'react-timeago'
+import { Link } from 'react-router'
 
 import Item from './Item'
 import { pluralize, isNumber, decode } from '../utils'
@@ -42,9 +43,9 @@ export default class Post extends Component {
   }
   renderSubreddit ({ subreddit }) {
     return (
-      <a key='subreddit' onClick={this.onLinkClick} href={'https://www.reddit.com/r/' + subreddit} target='_blank'>
+      <Link key='subreddit' onClick={this.onLinkClick} to={'/r/' + subreddit}>
         { subreddit }
-      </a>
+      </Link>
     )
   }
   renderMeta (post) {
