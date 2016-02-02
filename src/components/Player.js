@@ -32,7 +32,10 @@ export default class Player extends Component {
   onPlayerPause = () => this.setState({ playing: false }); // TODO: Fix YT firing onPause when ending
   onPlayerProgress = state => this.setState(this.state.seeking ? {} : state);
   onPlayerDuration = duration => this.setState({ duration });
-  onPlayerEnded = () => this.props.onSkip();
+  onPlayerEnded = () => {
+    trackPlayerEvent('ended', this.props.activePost.url)
+    this.props.onSkip()
+  };
   onPlayerError = () => this.props.onSkip();
   onTogglePlaying = () => {
     this.setState({ playing: !this.state.playing })
@@ -52,7 +55,6 @@ export default class Player extends Component {
   onSeekEnd = fraction => {
     this.setState({ seeking: false })
     this.refs.player.seekTo(fraction)
-    trackPlayerEvent('seek', Math.round(fraction * 100))
   };
   render () {
     const { activePost } = this.props
