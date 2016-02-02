@@ -7,6 +7,8 @@ const OUT_FILE = join(__dirname, '..', 'data', 'playlists.json')
 const IGNORE_MULTIS = ['redditunes', 'instruments', 'musicmakers', 'agoramusica', 'any']
 const DISCOVER_MULTIS = ['truemusic', 'thefirehose', 'thefountain', 'thedrip']
 
+// Fetch data from evilnight’s collection of multi-reddits
+// And write to a JSON file of playlists and subreddits
 fetch(FETCH_URL)
   .then(response => response.json())
   .then(parseResponse)
