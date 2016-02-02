@@ -8,7 +8,7 @@ node_js:
   - "4"
 script:
   - npm run lint
-  # - npm run test
+  - npm run test
   - npm run build
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && sshpass -e scp -r -o stricthostkeychecking=no dist/* $DEPLOY_DEST/reddit-player
