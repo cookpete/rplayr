@@ -9,11 +9,19 @@ const UA_CODE = 'UA-25230536-8'
 
 window.ga('create', UA_CODE, 'auto')
 
+// Track errors
 window.onerror = function (err, url, line) {
   window.ga('send', 'exception', {
     exDescription: err + ' ' + url + ': ' + line
   })
 }
+
+// Track external link clicks
+document.addEventListener('click', function (e) {
+  if (e.target.getAttribute('target') === '_blank') {
+    window.ga('send', 'event', 'external', 'click', e.target.getAttribute('href'))
+  }
+}, false)
 
 export function trackPageView ({ pathname }) {
   window.ga('send', 'pageview', pathname)
