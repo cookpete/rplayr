@@ -33,6 +33,7 @@ export default class Player extends Component {
   onPlayerProgress = state => this.setState(this.state.seeking ? {} : state);
   onPlayerDuration = duration => this.setState({ duration });
   onPlayerEnded = () => this.props.onSkip();
+  onPlayerError = () => this.props.onSkip();
   onTogglePlaying = () => {
     this.setState({ playing: !this.state.playing })
     trackPlayerEvent(this.state.playing ? 'pause' : 'play')
@@ -72,6 +73,7 @@ export default class Player extends Component {
             onProgress={this.onPlayerProgress}
             onDuration={this.onPlayerDuration}
             onEnded={this.onPlayerEnded}
+            onError={this.onPlayerError}
             youtubeConfig={{ preload: true }}
           />
         </section>
