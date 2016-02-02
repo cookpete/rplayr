@@ -47,9 +47,9 @@
   a {
     color: $link-color;
 
-    &:visted { color: darken($link-color, 5); }
-    &:hover {  color: darken($link-color, 10); }
-    &:active { color: darken($link-color, 15); }
+    &:visted { color: lighten($link-color, 10%); }
+    &:hover {  color: lighten($link-color, 20%); }
+    &:active { color: lighten($link-color, 30%); }
   }
 
   dl,
