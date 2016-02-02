@@ -3,17 +3,16 @@
   "version": "0.0.1",
   "description": "A React app to parse and play media from subreddits and comment threads.",
   "scripts": {
+    "build": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "clean": "rimraf dist data",
-    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
-    "prebuild": "npm run clean && npm run fetch-playlists",
-    "build": "npm run build:webpack && cp index.html dist",
-    "postbuild": "cp index.html dist",
-    "start": "node server.js",
-    "lint:js": "standard --verbose | snazzy",
-    "lint:css": "scss-lint src",
+    "fetch-playlists": "babel-node scripts/fetch-playlists.js",
     "lint": "npm run lint:js; npm run lint:css",
-    "test": "NODE_ENV=production mocha --require ignore-styles test --compilers js:babel-core/register",
-    "fetch-playlists": "babel-node scripts/fetch-playlists.js"
+    "lint:css": "scss-lint src",
+    "lint:js": "standard --verbose | snazzy",
+    "postbuild": "cp index.html dist",
+    "prebuild": "npm run clean && npm run fetch-playlists",
+    "start": "node server.js",
+    "test": "NODE_ENV=production mocha --require ignore-styles test --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
