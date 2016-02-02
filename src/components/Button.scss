@@ -14,4 +14,9 @@
   &:active { background-color: darken($button-color, 12); }
   &:hover {  background-color: darken($button-color, 4); }
   &:focus {  background-color: darken($button-color, 8); }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: .5;
+  }
 }

@@ -130,8 +130,8 @@ export default class Playlist extends Component {
         <Player activePost={activePost} onSkip={this.skip} />
         { this.renderSortLinks() }
         { this.renderPosts(posts) }
-        { posts && loadMore &&
-          <Button onClick={loadMore}>
+        { posts &&
+          <Button disabled={!loadMore} onClick={loadMore}>
             Load more
           </Button>
         }
