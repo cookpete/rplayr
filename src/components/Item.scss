@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../styles/variables';
 
 $height: 2.5rem;
 $active-background: rgba($link-color, .1);
@@ -54,7 +54,7 @@ $title-font-size: 15px;
 }
 
 .title {
-  composes: truncate from '../utils.scss';
+  composes: truncate from '../styles/_utils.scss';
   font-size: $title-font-size;
 }
 

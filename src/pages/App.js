@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 
 import 'normalize.css/normalize.css'
-import '../defaults.scss'
+import '../styles/defaults.scss'
 import classNames from './App.scss'
 import { trackTiming } from '../analytics'
 
