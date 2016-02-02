@@ -1,5 +1,12 @@
 import React from 'react'
 
+const REACT_URL = 'https://github.com/facebook/react'
+const FETCH_REDDIT_URL = 'https://github.com/CookPete/fetch-reddit'
+const REACT_PLAYER_URL = 'https://github.com/CookPete/react-player'
+const REDDIT_PLAYER_URL = 'https://github.com/CookPete/reddit-player'
+const CURATION_URL = 'https://www.reddit.com/r/listentothis/comments/1iwc8n/meta_announcing_the_official_rlistentothis_music/'
+const LISTENTOTHIS_URL = 'https://www.reddit.com/r/listentothis'
+
 export default function About () {
   return (
     <section>
@@ -7,11 +14,11 @@ export default function About () {
       <dl>
         <dt>What is this?</dt>
         <dd>
-          RedditPlayer creates playlists from any Reddit comments thread, subreddit or multi-reddit.
+          RedditPlayer creates playlists from any Reddit comment thread, subreddit or multi-reddit. Just replace <strong>reddit.com</strong> in any Reddit URL to <strong>rplayr.com</strong> and you’re good.
         </dd>
         <dt>How does it work?</dt>
         <dd>
-          The app is written using <a href='https://github.com/facebook/react'>React</a>. It fetches stuff from Reddit using <a href='https://github.com/CookPete/fetch-reddit'>fetch-reddit</a>, then <a href='https://github.com/CookPete/react-player'>react-player</a> plays any supported URLs. See the <a href='https://github.com/CookPete/reddit-player'>source code</a> on GitHub.
+          The app is written using <a href={REACT_URL}>React</a>. It fetches stuff from Reddit using <a href={FETCH_REDDIT_URL}>fetch-reddit</a>, then <a href={REACT_PLAYER_URL}>react-player</a> plays any supported URLs. Playlists are curated by the mighty <a href={CURATION_URL}>u/evilnight</a> over at <a href={LISTENTOTHIS_URL}>r/listentothis</a>. See the <a href={REDDIT_PLAYER_URL}>source code</a> on GitHub.
         </dd>
         <dt>What can it play?</dt>
         <dd>

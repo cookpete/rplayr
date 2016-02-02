@@ -9,8 +9,6 @@ import Icon from '../components/Icon'
 import Button from '../components/Button'
 import { pluralize } from '../utils'
 
-const CURATION_LINK = 'https://www.reddit.com/r/listentothis/comments/1iwc8n/meta_announcing_the_official_rlistentothis_music/'
-
 export default class Home extends Component {
 
   state = {
@@ -80,11 +78,9 @@ export default class Home extends Component {
     return (
       <section>
         <h2>Discover</h2>
-        <p>Great playlists to discover new music, curated by the mighty <a href={CURATION_LINK}>/u/evilnight</a></p>
         { playlists.discover.map(this.renderMulti) }
 
         <h2>Genres</h2>
-        <p>Multi-subreddits for a variety of styles, curated by the mighty <a href={CURATION_LINK}>/u/evilnight</a></p>
         <ul className={classNames.genres}>
           { playlists.genres.slice(0, limitGenres).map(this.renderMulti) }
         </ul>
@@ -112,7 +108,6 @@ export default class Home extends Component {
         }
 
         <h2>Threads</h2>
-        <p>RedditPlayer also supports comment threads. Here are some popular song-related threads from AskReddit:</p>
         <TopThreads />
         <About />
       </section>
