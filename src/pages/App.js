@@ -26,9 +26,9 @@ export default class App extends Component {
             </Link>
           </h1>
           {SEPARATOR}
-          <a href={SOURCE_URL} target='_blank'>Source</a>
-          {SEPARATOR}
           by <a href={AUTHOR_URL} target='_blank'>CookPete</a>
+          {SEPARATOR}
+          <a href={SOURCE_URL} target='_blank'>Source</a>
         </header>
         { this.props.children }
       </div>
