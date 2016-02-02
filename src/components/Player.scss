@@ -26,6 +26,12 @@
   margin-bottom: $spacing;
 }
 
+.disabledControls {
+  composes: controls;
+  pointer-events: none;
+  opacity: .3;
+}
+
 .timeSlider {
   flex: 1 1;
 }

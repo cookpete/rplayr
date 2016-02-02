@@ -75,7 +75,7 @@ export default class Player extends Component {
             youtubeConfig={{ preload: true }}
           />
         </section>
-        <section className={classNames.controls}>
+        <section className={activePost ? classNames.controls : classNames.disabledControls}>
           <button onClick={this.onClickPrev}>
             <Icon icon='prev' />
           </button>
