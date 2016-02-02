@@ -8,7 +8,7 @@ const REACT_PLAYER_URL = 'https://github.com/CookPete/react-player'
 const CURATION_URL = 'https://www.reddit.com/r/listentothis/comments/1iwc8n/meta_announcing_the_official_rlistentothis_music/'
 const LISTENTOTHIS_URL = 'https://www.reddit.com/r/listentothis'
 
-export default function About () {
+export default function FAQ () {
   return (
     <section>
       <h2>FAQ</h2>

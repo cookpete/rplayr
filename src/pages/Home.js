@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import classNames from './Home.scss'
 import playlists from '../../data/playlists.json'
-import About from './About'
+import FAQ from './FAQ'
 import TopThreads from '../components/TopThreads'
 import Item from '../components/Item'
 import Icon from '../components/Icon'
@@ -109,7 +109,7 @@ export default class Home extends Component {
 
         <h2>Threads</h2>
         <TopThreads />
-        <About />
+        <FAQ />
       </section>
     )
   }
