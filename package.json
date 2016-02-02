@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/cookpete/reddit-player",
   "devDependencies": {
+    "autoprefixer": "^6.3.1",
     "babel-cli": "^6.4.5",
     "babel-core": "^6.4.0",
     "babel-eslint": "^5.0.0-beta6",
@@ -56,6 +57,7 @@
     "json-loader": "^0.5.4",
     "mocha": "^2.3.4",
     "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.0",
     "react-addons-test-utils": "^0.14.6",
     "rimraf": "^2.5.0",
     "sass-loader": "^3.1.2",

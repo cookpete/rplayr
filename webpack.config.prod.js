@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var autoprefixer = require('autoprefixer')
 
 module.exports = {
   devtool: 'source-map',
@@ -35,7 +36,10 @@ module.exports = {
       include: path.join(__dirname, 'data')
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&sourceMap&localIdentName=[hash:base64:3]!sass?sourceMap'),
+      loader: ExtractTextPlugin.extract(
+        'style',
+        'css?modules&sourceMap&localIdentName=[hash:base64:3]&importLoaders=1!postcss!sass?sourceMap'
+      ),
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
@@ -45,5 +49,8 @@ module.exports = {
         path.join(__dirname, 'node_modules', 'normalize.css')
       ]
     }]
+  },
+  postcss: function () {
+    return [ autoprefixer ]
   }
 }
