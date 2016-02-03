@@ -68,7 +68,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
-    "fetch-reddit": "0.0.10",
+    "fetch-reddit": "^0.1.0",
     "lscache": "^1.0.5",
     "normalize.css": "^3.0.3",
     "query-string": "^3.0.0",

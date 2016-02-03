@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { getPosts } from 'fetch-reddit'
+import { fetchPosts } from 'fetch-reddit'
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router'
 
@@ -22,12 +22,12 @@ export default class Playlist extends Component {
   };
   componentDidMount () {
     const { pathname, query } = this.props.location
-    getPosts(pathname, query).then(::this.processPosts)
+    fetchPosts(pathname, query).then(::this.processPosts)
   }
   componentWillReceiveProps (nextProps) {
     if (!this.getPosts(nextProps)) {
       const { pathname, query } = nextProps.location
-      getPosts(pathname, query).then(::this.processPosts)
+      fetchPosts(pathname, query).then(::this.processPosts)
     }
   }
   processPosts ({ posts, loadMore }) {
