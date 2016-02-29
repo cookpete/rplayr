@@ -30,8 +30,8 @@ export default class Player extends Component {
   }
   onPlayerPlay = () => this.setState({ playing: true });
   onPlayerPause = () => this.setState({ playing: false }); // TODO: Fix YT firing onPause when ending
-  onPlayerProgress = state => this.setState(this.state.seeking ? {} : state);
-  onPlayerDuration = duration => this.setState({ duration });
+  onPlayerProgress = (state) => this.setState(this.state.seeking ? {} : state);
+  onPlayerDuration = (duration) => this.setState({ duration });
   onPlayerEnded = () => {
     trackPlayerEvent('ended', this.props.activePost.url)
     this.props.onSkip()
@@ -49,10 +49,10 @@ export default class Player extends Component {
     this.props.onSkip(-1)
     trackPlayerEvent('prev')
   };
-  onSetVolume = volume => this.setState({ volume });
+  onSetVolume = (volume) => this.setState({ volume });
   onSeekStart = () => this.setState({ seeking: true });
-  onSeekChange = fraction => this.setState({ played: fraction });
-  onSeekEnd = fraction => {
+  onSeekChange = (fraction) => this.setState({ played: fraction });
+  onSeekEnd = (fraction) => {
     this.setState({ seeking: false })
     this.refs.player.seekTo(fraction)
   };
@@ -84,7 +84,7 @@ export default class Player extends Component {
             <Icon icon='prev' />
           </button>
           <button onClick={this.onTogglePlaying}>
-            <Icon icon={ playing ? 'pause' : 'play' } />
+            <Icon icon={playing ? 'pause' : 'play'} />
           </button>
           <button onClick={this.onClickNext}>
             <Icon icon='next' />

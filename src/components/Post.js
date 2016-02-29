@@ -38,14 +38,14 @@ export default class Post extends Component {
   renderComments ({ permalink, num_comments, author }) {
     return (
       <a key='comments' onClick={this.onLinkClick} href={permalink} target='_blank' title='View source on Reddit'>
-        { isNumber(num_comments) ? pluralize(num_comments, 'comment') : author }
+        {isNumber(num_comments) ? pluralize(num_comments, 'comment') : author}
       </a>
     )
   }
   renderSubreddit ({ subreddit }) {
     return (
       <Link key='subreddit' onClick={this.onLinkClick} to={'/r/' + subreddit} title='View source on Reddit'>
-        { subreddit }
+        {subreddit}
       </Link>
     )
   }

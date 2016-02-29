@@ -16,7 +16,7 @@ export default function Range ({
   return (
     <div className={classNames.wrapper + ' ' + className}>
       <div className={classNames.background} />
-      { isNumber(secondary) &&
+      {isNumber(secondary) &&
         <div className={classNames.secondary} style={{ width: `calc(${secondary * 100}% - ${secondary * THUMB_WIDTH}px)` }} />
       }
       <div className={classNames.primary} style={{ width: `calc(${primary * 100}% - ${primary * THUMB_WIDTH}px)` }} />
@@ -24,9 +24,9 @@ export default function Range ({
         className={classNames.input}
         type='range' min={0} max={1} step='any'
         value={primary}
-        onMouseDown={e => onSeekStart(getValue(e))}
-        onChange={e => onSeekChange(getValue(e))}
-        onMouseUp={e => onSeekEnd(getValue(e))}
+        onMouseDown={(e) => onSeekStart(getValue(e))}
+        onChange={(e) => onSeekChange(getValue(e))}
+        onMouseUp={(e) => onSeekEnd(getValue(e))}
       />
     </div>
   )

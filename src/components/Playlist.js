@@ -56,7 +56,7 @@ export default class Playlist extends Component {
     const { posts } = this.state
     return posts[pathname + search]
   }
-  playPost = post => {
+  playPost = (post) => {
     document.title = `${post.title || DEFAULT_POST_TITLE}${SEPARATOR}${APP_NAME}`
     this.setState({
       activePost: post
@@ -66,7 +66,7 @@ export default class Playlist extends Component {
   skip = (delta = +1) => {
     const posts = this.getPosts()
     const { activePost } = this.state
-    const index = posts.findIndex(post => post.id === activePost.id)
+    const index = posts.findIndex((post) => post.id === activePost.id)
     const post = posts[index + delta] || posts[0]
     this.playPost(post)
   };
@@ -79,11 +79,11 @@ export default class Playlist extends Component {
     }
     return (
       <ul className={classNames.playlist}>
-        { posts.map(this.renderPost) }
+        {posts.map(this.renderPost)}
       </ul>
     )
   }
-  renderPost = post => {
+  renderPost = (post) => {
     const { activePost } = this.state
     return (
       <Post
@@ -107,15 +107,15 @@ export default class Playlist extends Component {
           <li><Link to={path}>hot</Link></li>
           <li><Link to={path + '/new'}>new</Link></li>
           <li>top</li>
-          { ['all', 'year', 'month', 'day'].map(sort => {
+          {['all', 'year', 'month', 'day'].map((sort) => {
             return (
               <li key={sort}>
                 <Link to={{ pathname: `${path}/top`, query: { sort: 'top', t: sort } }}>
-                  { sort }
+                  {sort}
                 </Link>
               </li>
             )
-          }) }
+          })}
         </ul>
       )
     }
@@ -127,9 +127,9 @@ export default class Playlist extends Component {
     return (
       <div>
         <Player activePost={activePost} onSkip={this.skip} />
-        { this.renderSortLinks() }
-        { this.renderPosts(posts) }
-        { posts &&
+        {this.renderSortLinks()}
+        {this.renderPosts(posts)}
+        {posts &&
           <Button disabled={!loadMore} onClick={loadMore}>
             Load more
           </Button>

@@ -30,7 +30,7 @@ export default class App extends Component {
           {SEPARATOR}
           <a href={SOURCE_URL} target='_blank'>Source</a>
         </header>
-        { this.props.children }
+        {this.props.children}
       </div>
     )
   }

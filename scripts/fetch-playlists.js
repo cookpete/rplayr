@@ -10,12 +10,12 @@ const DISCOVER_MULTIS = ['truemusic', 'thefirehose', 'thefountain', 'thedrip']
 // Fetch data from evilnight’s collection of multi-reddits
 // And write to a JSON file of playlists and subreddits
 fetch(FETCH_URL)
-  .then(response => response.json())
+  .then((response) => response.json())
   .then(parseResponse)
-  .then(data => {
-    mkdir(dirname(OUT_FILE), err => {
+  .then((data) => {
+    mkdir(dirname(OUT_FILE), (err) => {
       if (err) throw new Error(err)
-      writeFile(OUT_FILE, JSON.stringify(data), err => {
+      writeFile(OUT_FILE, JSON.stringify(data), (err) => {
         if (err) throw new Error(err)
         process.exit(0)
       })
@@ -26,7 +26,7 @@ function parseResponse (response) {
   let discover = []
   let genres = {}
   let subreddits = {}
-  response.forEach(multi => {
+  response.forEach((multi) => {
     const { name } = multi.data
     if (IGNORE_MULTIS.indexOf(name) !== -1) {
       return
@@ -37,7 +37,7 @@ function parseResponse (response) {
     } else {
       genres[name] = parseMulti(multi)
     }
-    multi.data.subreddits.forEach(subreddit => {
+    multi.data.subreddits.forEach((subreddit) => {
       subreddits[subreddit.name] = parseSubreddit(subreddit)
     })
   })
@@ -81,7 +81,7 @@ function sortBySubscribers (a, b) {
 }
 
 function objectToArray (object) {
-  return Object.keys(object).map(key => object[key])
+  return Object.keys(object).map((key) => object[key])
 }
 
 function onError (err) {

@@ -20,15 +20,15 @@ export default class TopThreads extends Component {
   };
   componentDidMount () {
     fetchJSON(SEARCH_URL, SEARCH_QUERY, this.processData)
-      .then(threads => this.setState({ threads }))
+      .then((threads) => this.setState({ threads }))
   }
   processData (response) {
-    return response.data.children.filter(thread => {
+    return response.data.children.filter((thread) => {
       return (
         thread.data.title.indexOf(SEARCH_QUERY.q) !== -1 &&
         thread.data.title.indexOf('Greg') === -1 // Remove the "Greg" thread..
       )
-    }).map(thread => {
+    }).map((thread) => {
       const { id, title, url, num_comments } = thread.data
       return {
         id,
@@ -52,8 +52,8 @@ export default class TopThreads extends Component {
     const { threads, limit } = this.state
     return (
       <section>
-        { threads && threads.slice(0, limit).map(this.renderLink) }
-        { threads && threads.length > limit &&
+        {threads && threads.slice(0, limit).map(this.renderLink)}
+        {threads && threads.length > limit &&
           <Button onClick={() => this.setState({ limit: limit + 5 })}>
             Show more
           </Button>

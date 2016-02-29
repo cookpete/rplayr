@@ -9,7 +9,7 @@ export default function Item ({ onClick, href, thumbnail, title, meta, active })
   const itemClass = active ? classNames.activeItem : classNames.item
   let content = renderContent({ thumbnail, title, meta })
   if (href) {
-    content = <Link to={href}>{ content }</Link>
+    content = <Link to={href}>{content}</Link>
   }
   return (
     <li className={itemClass} onClick={onClick}>
@@ -36,7 +36,7 @@ function renderContent ({ thumbnail, title, meta }) {
   title = title || DEFAULT_POST_TITLE
   return [
     <div key='thumb' className={classNames.thumbnail} style={thumbStyle}>
-      { !thumbnail ? title.slice(0, 1).toLowerCase() : '' }
+      {!thumbnail ? title.slice(0, 1).toLowerCase() : ''}
     </div>,
     <div key='info' className={classNames.info}>
       <div className={titleClass} title={title}>

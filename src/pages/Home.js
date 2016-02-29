@@ -63,7 +63,7 @@ export default class Home extends Component {
           onChange={this.onChangeSearch}
           placeholder='search'
         />
-        { searchTerm &&
+        {searchTerm &&
           <button onClick={() => this.setState({ searchTerm: '' })} className={classNames.clearSearch}>
             <Icon icon='clear' />
           </button>
@@ -78,30 +78,30 @@ export default class Home extends Component {
     return (
       <section>
         <h2>Discover</h2>
-        { playlists.discover.map(this.renderMulti) }
+        {playlists.discover.map(this.renderMulti)}
 
         <h2>Genres</h2>
         <ul className={classNames.genres}>
-          { playlists.genres.slice(0, limitGenres).map(this.renderMulti) }
+          {playlists.genres.slice(0, limitGenres).map(this.renderMulti)}
         </ul>
-        { playlists.genres.length > limitGenres &&
+        {playlists.genres.length > limitGenres &&
           <Button onClick={() => this.setState({ limitGenres: playlists.genres.length })}>
             Show all
           </Button>
         }
 
         <h2>Subreddits</h2>
-        { this.renderSearch(searchTerm) }
+        {this.renderSearch(searchTerm)}
         <ul className={classNames.subreddits}>
-          { subreddits
+          {subreddits
               .slice(0, limitSubs)
               .map(this.renderSubreddit)
           }
-          { subreddits.length === 0 &&
+          {subreddits.length === 0 &&
             <li>no subreddits found</li>
           }
         </ul>
-        { subreddits.length > limitSubs &&
+        {subreddits.length > limitSubs &&
           <Button onClick={() => this.setState({ limitSubs: limitSubs + 15 })}>
             Show more
           </Button>

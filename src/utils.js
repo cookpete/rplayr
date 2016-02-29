@@ -29,16 +29,16 @@ export function decode (str) {
     .replace('&amp;', '&')
 }
 
-export function fetchJSON (path, query, parseData = d => d) {
+export function fetchJSON (path, query, parseData = (d) => d) {
   const url = path + '?' + stringify(query)
   const cache = lscache.get(url)
   if (cache) {
     return Promise.resolve(cache)
   }
   return fetch(url)
-    .then(response => response.json())
+    .then((response) => response.json())
     .then(parseData)
-    .then(data => {
+    .then((data) => {
       lscache.set(url, data, CACHE_EXPIRY)
       return data
     })

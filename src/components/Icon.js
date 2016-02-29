@@ -13,7 +13,7 @@ export default function Icon ({ icon, className = '', ...extraProps }) {
       preserveAspectRatio='xMidYMid meet'
       fit
     >
-      { renderGraphic(icon) }
+      {renderGraphic(icon)}
     </svg>
   )
 }
