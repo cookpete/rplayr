@@ -12,7 +12,8 @@
     "postbuild": "cp index.html dist",
     "prebuild": "npm run clean && npm run fetch-playlists",
     "start": "node server.js",
-    "test": "NODE_ENV=production mocha --require ignore-styles test --compilers js:babel-core/register"
+    "test": "NODE_ENV=production mocha --require ignore-styles test --compilers js:babel-core/register",
+    "deploy": "lftp -u $FTP_USER,$FTP_PASS $FTP_SITE -e 'mirror -c -R dist ~; exit'"
   },
   "repository": {
     "type": "git",
