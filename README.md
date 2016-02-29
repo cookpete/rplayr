@@ -1,8 +1,8 @@
 # rplayr
 
-[![Build Status](https://img.shields.io/travis/CookPete/reddit-player/master.svg)](https://travis-ci.org/CookPete/reddit-player)
-[![Dependency Status](https://img.shields.io/david/CookPete/reddit-player.svg)](https://david-dm.org/CookPete/reddit-player)
-[![devDependency Status](https://img.shields.io/david/dev/CookPete/reddit-player.svg)](https://david-dm.org/CookPete/reddit-player#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/CookPete/rplayr/master.svg)](https://travis-ci.org/CookPete/rplayr)
+[![Dependency Status](https://img.shields.io/david/CookPete/rplayr.svg)](https://david-dm.org/CookPete/rplayr)
+[![devDependency Status](https://img.shields.io/david/dev/CookPete/rplayr.svg)](https://david-dm.org/CookPete/rplayr#info=devDependencies)
 
 Source code for [rplayr](http://reddit.cookpete.com)
 
@@ -27,8 +27,8 @@ Yes, there are other apps that do the job. I wanted to create something simple w
 See the app [in action](http://reddit.cookpete.com) or run it locally yourself:
 
 ```bash
-git clone https://github.com/CookPete/reddit-player.git
-cd reddit-player
+git clone https://github.com/CookPete/rplayr.git
+cd rplayr
 npm install
 npm run fetch-playlists
 npm start
