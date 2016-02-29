@@ -62,6 +62,13 @@ export default class Playlist extends Component {
       activePost: post
     })
     trackPlaylistEvent('load', post.url)
+
+    // Load more posts if this is the last in the current playlist
+    const { loadMore } = this.state
+    const posts = this.getPosts()
+    if (loadMore && post.id === posts[posts.length - 1].id) {
+      loadMore()
+    }
   };
   skip = (delta = +1) => {
     const posts = this.getPosts()
