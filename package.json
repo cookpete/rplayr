@@ -1,5 +1,5 @@
 {
-  "name": "reddit-player",
+  "name": "rplayr",
   "version": "0.0.1",
   "description": "A React app to parse and play media from subreddits and comment threads.",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "keywords": [
     "react",
+    "rplayr",
     "reddit",
     "music",
     "player",

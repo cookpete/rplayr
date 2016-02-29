@@ -1,23 +1,23 @@
-# RedditPlayer
+# rplayr
 
 [![Build Status](https://img.shields.io/travis/CookPete/reddit-player/master.svg)](https://travis-ci.org/CookPete/reddit-player)
 [![Dependency Status](https://img.shields.io/david/CookPete/reddit-player.svg)](https://david-dm.org/CookPete/reddit-player)
 [![devDependency Status](https://img.shields.io/david/dev/CookPete/reddit-player.svg)](https://david-dm.org/CookPete/reddit-player#info=devDependencies)
 
-Source code for [RedditPlayer](http://reddit.cookpete.com)
+Source code for [rplayr](http://reddit.cookpete.com)
 
 <img src='https://cloud.githubusercontent.com/assets/1926029/12778838/ec1763c6-ca5c-11e5-9edb-9571f265f61c.png' width='600' />
 
 ## FAQ
 
 ### What is this?
-RedditPlayer creates playlists from any Reddit comment thread, subreddit or multi-reddit. Just replace <strong>reddit.com</strong> in any Reddit URL to <strong>reddit.cookpete.com</strong> and you’re good.
+rplayr creates playlists from any Reddit comment thread, subreddit or multi-reddit. Just replace <strong>reddit.com</strong> in any Reddit URL to <strong>reddit.cookpete.com</strong> and you’re good.
 
 ### How does it work?
 The app is written using [React](https://facebook.github.io/react). It fetches stuff from Reddit using [fetch-reddit](https://github.com/CookPete/fetch-reddit), then [react-player](https://github.com/CookPete/react-player) plays any supported URLs. Playlists are curated by the mighty [evilnight](https://www.reddit.com/r/listentothis/comments/1iwc8n/meta_announcing_the_official_rlistentothis_music/) over at [/r/listentothis](https://www.reddit.com/r/listentothis).
 
 ### What can it play?
-RedditPlayer currently supports YouTube, SoundCloud and Vimeo links.
+rplayr currently supports YouTube, SoundCloud and Vimeo links.
 
 ### What about [radd.it](http://radd.it), [reddit.musicplayer.io](https://reddit.musicplayer.io), [redditplaylister](http://redditplaylister.phoenixforgotten.com), etc?
 Yes, there are other apps that do the job. I wanted to create something simple with a clean, minimal interface. Also, this app fixes [issues](https://github.com/CookPete/react-player/issues/7) that other apps still suffer from.
