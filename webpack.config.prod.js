@@ -22,9 +22,8 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
+      compressor: { warnings: false },
+      comments: false
     }),
     new ExtractTextPlugin('app.css')
   ],
