@@ -4,14 +4,14 @@
 [![Dependency Status](https://img.shields.io/david/CookPete/rplayr.svg)](https://david-dm.org/CookPete/rplayr)
 [![devDependency Status](https://img.shields.io/david/dev/CookPete/rplayr.svg)](https://david-dm.org/CookPete/rplayr#info=devDependencies)
 
-Source code for [rplayr](http://reddit.cookpete.com)
+Source code for [rplayr](http://rplayr.com)
 
 <img src='https://cloud.githubusercontent.com/assets/1926029/13465587/4d68ebbc-e08e-11e5-9e44-0c1d4169e32b.png' width='600' />
 
 ## FAQ
 
 ### What is this?
-rplayr creates playlists from any Reddit comment thread, subreddit or multi-reddit. Just replace <strong>reddit.com</strong> in any Reddit URL to <strong>reddit.cookpete.com</strong> and you’re good.
+rplayr creates playlists from any Reddit comment thread, subreddit or multi-reddit. Just replace <strong>reddit.com</strong> in any Reddit URL to <strong>rplayr.com</strong> and you’re good.
 
 ### How does it work?
 The app is written using [React](https://facebook.github.io/react). It fetches stuff from Reddit using [fetch-reddit](https://github.com/CookPete/fetch-reddit), then [react-player](https://github.com/CookPete/react-player) plays any supported URLs. Playlists are curated by the mighty [evilnight](https://www.reddit.com/r/listentothis/comments/1iwc8n/meta_announcing_the_official_rlistentothis_music/) over at [/r/listentothis](https://www.reddit.com/r/listentothis).
@@ -24,7 +24,7 @@ Yes, there are other apps that do the job. I wanted to create something simple w
 
 ## Development
 
-See the app [in action](http://reddit.cookpete.com) or run it locally yourself:
+See the app [in action](http://rplayr.com) or run it locally yourself:
 
 ```bash
 git clone https://github.com/CookPete/rplayr.git
