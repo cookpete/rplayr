@@ -29,10 +29,20 @@ export default class App extends Component {
     canvas.height = 32
     if (canvas.getContext) {
       const ctx = canvas.getContext('2d')
+
+      // Coloured circle
       ctx.beginPath()
       ctx.arc(16, 16, 16, 0, 360)
       ctx.fillStyle = randomcolor({ seed, luminosity: 'light' })
       ctx.fill()
+
+      // Shading half-circle
+      ctx.beginPath()
+      ctx.arc(16, 16, 16, 290 * Math.PI / 180, 110 * Math.PI / 180)
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'
+      ctx.fill()
+
+      // Render to URL and update favicon
       const url = canvas.toDataURL('image/png')
       document.querySelector('link[rel="icon"]').setAttribute('href', url)
     }
