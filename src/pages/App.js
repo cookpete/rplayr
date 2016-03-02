@@ -14,7 +14,7 @@ export default class App extends Component {
   };
   componentDidMount () {
     const { params, location } = this.props
-    updateFavicon(params, location)
+    updateFavicon(params, location.pathname)
     if (window.performance) {
       trackTiming('react', 'firstrender', Math.round(window.performance.now()))
     }
