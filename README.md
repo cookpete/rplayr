@@ -6,7 +6,7 @@
 
 Source code for [rplayr](http://reddit.cookpete.com)
 
-<img src='https://cloud.githubusercontent.com/assets/1926029/12778838/ec1763c6-ca5c-11e5-9edb-9571f265f61c.png' width='600' />
+<img src='https://cloud.githubusercontent.com/assets/1926029/13465587/4d68ebbc-e08e-11e5-9e44-0c1d4169e32b.png' width='600' />
 
 ## FAQ
 
