@@ -35,9 +35,7 @@ function renderContent ({ thumbnail, title, meta }) {
   }
   title = title || DEFAULT_POST_TITLE
   return [
-    <div key='thumb' className={classNames.thumbnail} style={thumbStyle}>
-      {!thumbnail ? title.slice(0, 1).toLowerCase() : ''}
-    </div>,
+    <div key='thumb' className={classNames.thumbnail} style={thumbStyle} />,
     <div key='info' className={classNames.info}>
       <div className={titleClass} title={title}>
         {title}
