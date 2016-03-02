@@ -111,13 +111,13 @@ export default class Playlist extends Component {
         <ul className={classNames.sort}>
           <li><a href={'https://www.reddit.com' + pathname + search} target='_blank'>playlist source</a></li>
           <li>{SEPARATOR}</li>
-          <li><Link to={path}>hot</Link></li>
-          <li><Link to={path + '/new'}>new</Link></li>
+          <li><Link to={path} activeClassName={classNames.activeSortLink}>hot</Link></li>
+          <li><Link to={path + '/new'} activeClassName={classNames.activeSortLink}>new</Link></li>
           <li>top</li>
           {['all', 'year', 'month', 'day'].map((sort) => {
             return (
               <li key={sort}>
-                <Link to={{ pathname: `${path}/top`, query: { sort: 'top', t: sort } }}>
+                <Link to={{ pathname: `${path}/top`, query: { sort: 'top', t: sort } }} activeClassName={classNames.activeSortLink}>
                   {sort}
                 </Link>
               </li>
