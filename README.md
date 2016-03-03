@@ -4,7 +4,7 @@
 [![Dependency Status](https://img.shields.io/david/CookPete/rplayr.svg)](https://david-dm.org/CookPete/rplayr)
 [![devDependency Status](https://img.shields.io/david/dev/CookPete/rplayr.svg)](https://david-dm.org/CookPete/rplayr#info=devDependencies)
 
-Source code for [rplayr](http://rplayr.com)
+Source code for [rplayr](http://rplayr.com), a React app to parse and play media from subreddits and comment threads.
 
 <img src='https://cloud.githubusercontent.com/assets/1926029/13465587/4d68ebbc-e08e-11e5-9e44-0c1d4169e32b.png' width='600' />
 
