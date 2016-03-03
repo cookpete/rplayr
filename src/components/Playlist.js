@@ -7,7 +7,6 @@ import classNames from './Playlist.scss'
 import Player from './Player'
 import Button from './Button'
 import Post from './Post'
-import { trackPlaylistEvent } from '../analytics'
 import { APP_NAME, IGNORE_AUTHORS, DEFAULT_POST_TITLE, SEPARATOR } from '../config'
 
 export default class Playlist extends Component {
@@ -44,7 +43,6 @@ export default class Playlist extends Component {
       loadMore: () => {
         loadMore().then(::this.processPosts)
         this.setState({ loadMore: null })
-        trackPlaylistEvent('more', posts.length)
       }
     })
   };
@@ -61,7 +59,6 @@ export default class Playlist extends Component {
     this.setState({
       activePost: post
     })
-    trackPlaylistEvent('load', post.url)
 
     // Load more posts if this is the last in the current playlist
     const { loadMore } = this.state

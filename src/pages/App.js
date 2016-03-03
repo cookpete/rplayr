@@ -5,7 +5,6 @@ import 'normalize.css/normalize.css'
 import '../styles/defaults.scss'
 import classNames from './App.scss'
 import { updateFavicon } from '../utils'
-import { trackTiming } from '../analytics'
 import { APP_NAME, AUTHOR_URL, SOURCE_URL, SEPARATOR } from '../config'
 
 export default class App extends Component {
@@ -15,9 +14,6 @@ export default class App extends Component {
   componentDidMount () {
     const { params, location } = this.props
     updateFavicon(params, location.pathname)
-    if (window.performance) {
-      trackTiming('react', 'firstrender', Math.round(window.performance.now()))
-    }
   }
   componentWillReceiveProps ({ params, location }) {
     updateFavicon(params, location.pathname)

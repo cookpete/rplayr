@@ -5,7 +5,6 @@ import classNames from './Player.scss'
 import Range from './Range'
 import Icon from './Icon'
 import Duration from './Duration'
-import { trackPlayerEvent } from '../analytics'
 
 export default class Player extends Component {
   static propTypes = {
@@ -41,7 +40,6 @@ export default class Player extends Component {
     this.setState({ duration })
   };
   onPlayerEnded = () => {
-    trackPlayerEvent('ended', this.props.activePost.url)
     this.props.onSkip()
   };
   onPlayerError = () => {
@@ -49,15 +47,12 @@ export default class Player extends Component {
   };
   onTogglePlaying = () => {
     this.setState({ playing: !this.state.playing })
-    trackPlayerEvent(this.state.playing ? 'pause' : 'play')
   };
   onClickNext = () => {
     this.props.onSkip()
-    trackPlayerEvent('next')
   };
   onClickPrev = () => {
     this.props.onSkip(-1)
-    trackPlayerEvent('prev')
   };
   onSetVolume = (volume) => {
     this.setState({ volume })

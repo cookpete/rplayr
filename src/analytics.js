@@ -28,15 +28,3 @@ if (typeof window !== 'undefined') {
 export function trackPageView ({ pathname }) {
   window.ga('send', 'pageview', pathname)
 }
-
-export function trackPlayerEvent (name, label) {
-  window.ga('send', 'event', 'player', name, label)
-}
-
-export function trackPlaylistEvent (name, label) {
-  window.ga('send', 'event', 'playlist', name, label)
-}
-
-export function trackTiming (category, name, ms) {
-  window.ga('send', 'timing', category, name, ms)
-}
